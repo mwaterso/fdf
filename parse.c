@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/06/04 17:52:36 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/06/28 18:32:51 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/10 17:43:41 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -24,19 +24,31 @@ int				return_error(char **tmp_tab, t_input *map)
 static void		check_line(t_input *map)
 {
 	int		ret;
+	int		i;
 	char	*line;
 
+	i = 0;
 	while ((ret = get_next_line(map->fd2, &line)) == 1)
 	{
 		map->len_y++;
-		ft_strdel(&line);
+       while (++i < ft_strlen(line))
+           if (!ft_isalpha(line[i]))
+               exit(0);
+       ft_strdel(&line);
 	}
 	if (ret == -1)
 	{
 		ft_putendl("Fdf need a file as argument");
 		exit(0);
 	}
-}
+}/*while ((ret = get_next_line(map->fd2, &line)) == 1)
+   {
+       map->len_y++;
+       while (++i < ft_strlen(line))
+           if (!ft_isalpha(line[i]))
+               exit(0);
+       ft_strdel(&line);
+   }*/
 
 int				intab_int(t_input *map, char **tmp_tab, t_index index)
 {

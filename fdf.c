@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/06/28 16:53:02 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/06/28 18:27:38 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/10 17:32:21 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -61,8 +61,8 @@ int		keyboard(int key, t_input *inputs)
 		inputs->origin.y += 10;
 	if (key == KEY_ESCAPE)
 	{
-		mlx_destroy_window(inputs->mlx_ad, inputs->win_ad);
-		return (1);
+		//mlx_destroy_window(inputs->mlx_ad, inputs->win_ad);
+		return (destroywin(inputs));
 	}
 	racc(inputs);
 	return (1);
@@ -100,7 +100,10 @@ int		main(int arc, char **arv)
 	input.tab_int = NULL;
 	input.len_y = 0;
 	if (arc != 2)
+	{
+		ft_putendl("Fdf need a file as argument");
 		return (1);
+	}
 	if (parse_file(&input, arv[1]) < 0)
 	{
 		if (input.tab_int)

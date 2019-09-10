@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/06/12 18:13:11 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/06/28 18:31:43 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/10 17:34:11 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -55,4 +55,11 @@ void	zoom(t_input *inputs, int way)
 		view2(inputs);
 	else if (inputs->view == 3)
 		view3(inputs);
+}
+
+int		destroywin(t_input *inputs)
+{
+	mlx_destroy_window(inputs->mlx_ad, inputs->win_ad);
+	exit(EXIT_SUCCESS);
+	return(-1);
 }
