@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/06/28 15:27:01 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/11 22:01:00 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/11 23:07:06 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -45,7 +45,6 @@ void	print_line(t_input *input, t_dot a, t_dot c, int color)
 	dy = (double)(a.y - c.y) / tall;
 	while (i < tall)
 	{
-		
 		b.x = (c.x + i * dx);
 		b.y = (c.y + i * dy);
 		if (b.x >= 0 && b.x < input->win_h &&
@@ -59,6 +58,7 @@ void	print_line(t_input *input, t_dot a, t_dot c, int color)
 void	free_input(t_input *inputs)
 {
 	int i;
+
 	if (inputs->tab_int)
 	{
 		i = -1;

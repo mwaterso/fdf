@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/06/04 17:52:36 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/11 21:31:42 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/11 23:07:18 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -78,7 +78,7 @@ int				fill_tab_int(t_input *map)
 		}
 		if (map->len_x != ft_tablen((void **)tmp_tab))
 			return_error(tmp_tab, map);
-		if(intab_int(map, tmp_tab, index) < 0)
+		if (intab_int(map, tmp_tab, index) < 0)
 		{
 			return_error(tmp_tab, map);
 			return (-1);
