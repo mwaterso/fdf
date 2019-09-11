@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/06/04 17:52:36 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/11 17:55:53 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/11 18:53:46 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -17,7 +17,8 @@ int				return_error(char **tmp_tab, t_input *map)
 {
 	ft_putendl("Error");
 	ft_2dstrdel(&tmp_tab);
-	mlx_destroy_window(map->mlx_ad, map->win_ad);
+	if (map->mlx_ad && map->win_ad)
+		mlx_destroy_window(map->mlx_ad, map->win_ad);
 	exit(0);
 }
 
@@ -32,7 +33,7 @@ static void		check_line(t_input *map)
 	{
 		map->len_y++;
 		while (++i < ft_strlen(line))
-			if (!ft_isalpha(line[i]))
+			if (!ft_isascii(line[i]))
 				exit(0);
 		ft_strdel(&line);
 	}
