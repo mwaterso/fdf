@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/06/28 15:27:01 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/06/28 18:28:45 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/11 22:01:00 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -29,24 +29,28 @@ int		tallnomin(int a, int b)
 	return (b);
 }
 
-void	print_line(t_input *input, t_dot a, t_dot b, int color)
+void	print_line(t_input *input, t_dot a, t_dot c, int color)
 {
 	double		dx;
 	double		dy;
 	int			tall;
 	int			i;
+	t_dot		b;
 
 	i = 0;
-	if (b.x == a.x && b.y == a.y)
+	if (c.x == a.x && c.y == a.y)
 		return ;
-	tall = tallnomin(a.y - b.y, a.x - b.x);
-	dx = (double)(a.x - b.x) / tall;
-	dy = (double)(a.y - b.y) / tall;
-	while (!((int)(b.x + i * dx) == a.x && (int)(b.y + i * dy) == a.y))
+	tall = tallnomin(a.y - c.y, a.x - c.x);
+	dx = (double)(a.x - c.x) / tall;
+	dy = (double)(a.y - c.y) / tall;
+	while (i < tall)
 	{
-		if ((b.x + i * dx) >= 0 && (b.x + i * dx) <= input->win_h &&
-		(b.y + i * dy) >= 0 && (b.y + i * dy) <= input->win_w)
-			input->im.tab[(int)((int)(b.x + i * dx) + (int)(b.y + i * dy)
+		
+		b.x = (c.x + i * dx);
+		b.y = (c.y + i * dy);
+		if (b.x >= 0 && b.x < input->win_h &&
+		b.y >= 0 && b.y < input->win_w)
+			input->im.tab[(int)(b.x + b.y
 	* input->win_h)] = color;
 		i++;
 	}
@@ -55,13 +59,15 @@ void	print_line(t_input *input, t_dot a, t_dot b, int color)
 void	free_input(t_input *inputs)
 {
 	int i;
-
-	i = -1;
-	while (++i < inputs->ymax && inputs->tab_int[i])
+	if (inputs->tab_int)
 	{
-		free(inputs->tab_int[i]);
+		i = -1;
+		while (++i < inputs->ymax && inputs->tab_int[i])
+		{
+			free(inputs->tab_int[i]);
+		}
+		free(inputs->tab_int);
 	}
-	free(inputs->tab_int);
 }
 
 void	calc(int y, int x, t_dot *a, t_input *data)

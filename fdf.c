@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/06/28 16:53:02 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/11 17:54:18 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/11 21:12:20 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -103,8 +103,7 @@ int		main(int arc, char **arv)
 	}
 	if (parse_file(&input, arv[1]) < 0)
 	{
-		if (input.tab_int)
-			free_input(&input);
+		return_error(NULL, &input);
 		return (1);
 	}
 	var_init(&input);

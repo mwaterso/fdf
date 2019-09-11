@@ -6,7 +6,7 @@
 #    By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/06/13 15:55:07 by mwaterso     #+#   ##    ##    #+#        #
-#    Updated: 2019/09/11 18:54:29 by mwaterso    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/09/11 22:48:28 by mwaterso    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -21,7 +21,7 @@ HEADER = fillit.h
 LIBFT = libft/libft.a
 MLX = minilibx_macos/libmlx.a
 CC = gcc
-CFLAGS = -Wextra -Wall -Werror -framework OpenGL -framework AppKit
+CFLAGS =  -Wextra -Wall -Werror -framework OpenGL -framework AppKit
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/09/06 16:39:13 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/10 17:25:26 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/11 22:01:28 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -18,7 +18,6 @@
 # include "minilibx_macos/mlx.h"
 # include "keyboard.h"
 # include <fcntl.h>
-# include <stdio.h>
 # include <stdlib.h>
 
 typedef struct	s_dot
@@ -80,6 +79,7 @@ typedef struct	s_index
 int				parse_file(t_input *data, char *file);
 int				destroywin(t_input *inputs);
 int				fdf(t_input *data);
+int				return_error(char **tmp_tab, t_input *map);
 void			print_line(t_input *input, t_dot a, t_dot b, int color);
 void			view1(t_input *inputs);
 void			view2(t_input *inputs);
