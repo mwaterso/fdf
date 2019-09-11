@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/06/12 18:13:11 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/10 17:34:11 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/11 17:57:47 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -61,5 +61,5 @@ int		destroywin(t_input *inputs)
 {
 	mlx_destroy_window(inputs->mlx_ad, inputs->win_ad);
 	exit(EXIT_SUCCESS);
-	return(-1);
+	return (-1);
 }

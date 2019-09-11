@@ -6,7 +6,7 @@
 /*   By: mwaterso <mwaterso@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/06/28 16:53:02 by mwaterso     #+#   ##    ##    #+#       */
-/*   Updated: 2019/09/10 17:32:21 by mwaterso    ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/09/11 17:54:18 by mwaterso    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -60,10 +60,7 @@ int		keyboard(int key, t_input *inputs)
 	if (key == KEY_DOWN)
 		inputs->origin.y += 10;
 	if (key == KEY_ESCAPE)
-	{
-		//mlx_destroy_window(inputs->mlx_ad, inputs->win_ad);
 		return (destroywin(inputs));
-	}
 	racc(inputs);
 	return (1);
 }
